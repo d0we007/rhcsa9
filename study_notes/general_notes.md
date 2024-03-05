@@ -14,13 +14,13 @@
 <1>9. Work on everything else.
 ```
 
-- 1.0 reboot
-- 1.01 A successful reboot allows you to verify that everything is working up to the moment you have rebooted.
-- 1.02 Before rebooting, remove the rhgb and quiet option from the GRUB boot loader => allows you to see what is actually happening and makes troubleshooting a lot easy.
-- 1.03 Should at least reboot after working on all storage-related assignments.
-- 2.0 Ensure that all the tasks are implemented with firewalld and SELinux enabled. Your server should be able to survive the reboot.
+- <1>10. reboot
+- <2>1. A successful reboot allows you to verify that everything is working up to the moment you have rebooted.
+- <2>2. Before rebooting, remove the rhgb and quiet option from the GRUB boot loader => allows you to see what is actually happening and makes troubleshooting a lot easy.
+- <2>3. Should at least reboot after working on all storage-related assignments.
+- <2>4. Ensure that all the tasks are implemented with firewalld and SELinux enabled. Your server should be able to survive the reboot.
 ```
-### 2.01 Check firewall services => add whatever services you need: 
+### <1>11. Check firewall services => add whatever services you need: 
 firewall-cmd --list-all
 for i in nfs mountd rpc-bind http https ntp ; do firewall-cmd --add-service $i --permanent ; done
 firewall-cmd --reload 
@@ -28,7 +28,7 @@ firewall-cmd --list-all
 ```
 
 ```
-### 2.02 set/get SELinux:
+### <1>12. set/get SELinux:
 setenforce 1|0
 getenforce
 ```
