@@ -1,7 +1,6 @@
 # Final preperation
 ## General Tips
 ### Order in which you work on the assignments: 
-
 ```
 <1>1. Make sure that your server boots and you have root access to it.
 <1>2. Configure networking in the way it is supposed to work.
@@ -14,21 +13,24 @@
 <1>9. Work on everything else.
 ```
 
-- <1>10. reboot
-- <2>1. A successful reboot allows you to verify that everything is working up to the moment you have rebooted.
-- <2>2. Before rebooting, remove the rhgb and quiet option from the GRUB boot loader => allows you to see what is actually happening and makes troubleshooting a lot easy.
-- <2>3. Should at least reboot after working on all storage-related assignments.
-- <2>4. Ensure that all the tasks are implemented with firewalld and SELinux enabled. Your server should be able to survive the reboot.
+### Reboot 
 ```
-### <1>11. Check firewall services => add whatever services you need: 
+- A successful reboot allows you to verify that everything is working up to the moment you have rebooted.
+- Before rebooting, remove the rhgb and quiet option from the GRUB boot loader => allows you to see what is actually happening and makes troubleshooting a lot easy.
+- Should at least reboot after working on all storage-related assignments.
+- Ensure that all the tasks are implemented with firewalld and SELinux enabled. Your server should be able to survive the reboot.
+```
+
+### Check firewall services => add whatever services you need: 
+```
 firewall-cmd --list-all
 for i in nfs mountd rpc-bind http https ntp ; do firewall-cmd --add-service $i --permanent ; done
 firewall-cmd --reload 
 firewall-cmd --list-all
 ```
 
+### set/get SELinux:
 ```
-### <1>12. set/get SELinux:
 setenforce 1|0
 getenforce
 ```
